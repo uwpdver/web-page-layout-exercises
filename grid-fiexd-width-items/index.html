@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+
+    <meta
+      name="description"
+      content="响应式列宽等分网格布局。网格宽度被自动等分，网格轨道数会根据网格容器宽度自动调整。根据网格容器的宽度，以及设定的网格项最小宽度，网格项的宽度将会自动响应网格容器的宽度而伸缩和换行。"
+    />
+    <style>
+      body {
+        margin: 0;
+        background-color: #eeeeee;
+        min-height: 100vh;
+      }
+
+      header {
+        margin: 0 1rem 2rem;
+      }
+
+      p,
+      ul {
+        padding: unset;
+        margin: unset;
+      }
+
+      li {
+        list-style: none;
+      }
+    </style>
+    <style>
+      .grid-container {
+        --item-min-w: 320px;
+
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(var(--item-min-w), 1fr)
+        );
+        grid-auto-rows: 150px;
+        gap: 1.5rem 1rem;
+        margin: 1rem;
+      }
+
+      .grid-item {
+        overflow: hidden;
+        display: flex;
+        border-radius: 1rem;
+        padding: 1rem;
+
+        background-color: #ffffff;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      }
+
+      .item-start-container {
+        flex: 0 0 100px;
+        margin-right: 1rem;
+      }
+
+      .item-start-container > * {
+        width: 100%;
+        border-radius: 0.75rem;
+      }
+
+      .item-end-container {
+        flex: 1;
+      }
+
+      .item-end-container > * + * {
+        margin-top: 0.5rem;
+      }
+
+      .item-bio {
+        color: #666666;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>响应式列宽等分网格布局</h1>
+      <p>
+        响应式列宽等分网格布局。网格宽度被自动等分，网格轨道数会根据网格容器宽度自动调整。根据网格容器的宽度，以及设定的网格项最小宽度，网格项的宽度将会自动响应网格容器的宽度而伸缩和换行。无需媒体查询。需要固定的数值只有网格列轨道的最小宽度。
+      </p>
+    </header>
+    <main>
+      <section>
+        <ul class="grid-container">
+          <li class="grid-item">
+            <div class="item-start-container">
+              <img class="item-image" src="example-image.jpg" alt="example" />
+            </div>
+            <div class="item-end-container">
+              <p class="item-name"><strong>TikTok</strong></p>
+              <p class="item-bio">
+                TikTok is a short-form, video-sharing app that allows users to
+                create and share 15-second videos, on any topic.
+              </p>
+            </div>
+          </li>
+
+          <li class="grid-item">
+            <div class="item-start-container">
+              <img class="item-image" src="example-image.jpg" />
+            </div>
+            <div class="item-end-container">
+              <p class="item-name"><strong>TikTok</strong></p>
+              <p class="item-bio">
+                TikTok is a short-form, video-sharing app that allows users to
+                create and share 15-second videos, on any topic.
+              </p>
+            </div>
+          </li>
+
+          <li class="grid-item">
+            <div class="item-start-container">
+              <img class="item-image" src="example-image.jpg" />
+            </div>
+            <div class="item-end-container">
+              <p class="item-name"><strong>TikTok</strong></p>
+              <p class="item-bio">
+                TikTok is a short-form, video-sharing app that allows users to
+                create and share 15-second videos, on any topic.
+              </p>
+            </div>
+          </li>
+
+          <li class="grid-item">
+            <div class="item-start-container">
+              <img class="item-image" src="example-image.jpg" />
+            </div>
+            <div class="item-end-container">
+              <p class="item-name"><strong>TikTok</strong></p>
+              <p class="item-bio">
+                TikTok is a short-form, video-sharing app that allows users to
+                create and share 15-second videos, on any topic.
+              </p>
+            </div>
+          </li>
+
+          <li class="grid-item">
+            <div class="item-start-container">
+              <img class="item-image" src="example-image.jpg" />
+            </div>
+            <div class="item-end-container">
+              <p class="item-name"><strong>TikTok</strong></p>
+              <p class="item-bio">
+                TikTok is a short-form, video-sharing app that allows users to
+                create and share 15-second videos, on any topic.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
